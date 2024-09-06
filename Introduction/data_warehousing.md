@@ -37,4 +37,18 @@ By using a data warehouse, organizations can transform raw data into valuable in
 
 ![](https://github.com/rohish-zade/data-warehousing/blob/main/Introduction/images/components%20of%20data%20Datawarehouse.png)
 
-1. Source Systems: These are operational databases, applications, or external sources where data originates (e.g., CRM, ERP, sales systems).
+#### Source Systems:
+  - These are operational databases, applications, or external sources where data originates (e.g., CRM, ERP, sales systems).
+##### ETL Process (Extract, Transform, Load):
+  - **Extract:** Retrieve data from source systems.
+  - **Transform:** Cleanse, reformat, and prepare the data for storage.
+  - **Load:** Insert the transformed data into the data warehouse.
+#### Data Staging Area: 
+  - A temporary storage area where data is cleaned and transformed before loading into the warehouse.
+#### Data Warehouse Database: 
+  - The central repository where the integrated, cleaned, and organized data is stored.
+#### Data Marts: 
+  - Subsets of the data warehouse tailored to specific departments or business areas (e.g., finance, marketing).
+  - Category level separation inside data warehouse
+#### BI Tools and Applications: 
+  - Tools for querying, reporting, and analyzing the data stored in the warehouse (e.g., Tableau, Power BI).
