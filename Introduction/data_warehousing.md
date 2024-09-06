@@ -35,6 +35,18 @@ By using a data warehouse, organizations can transform raw data into valuable in
 #### 5. Scalability:
 - A data warehouse can handle large volumes of data and adapt as the organization grows.
 
+
+## Data Warehouse vs Data Lake
+- A data lake is a centralized repository that allows organizations to store all their structured and unstructured data at any scale.
+
+| Metric          | Data Warehouse          | Data Lakes                                     |
+| --------------- | ----------------------- | ---------------------------------------------- |
+| Data Type       | structured data         | structured, semi-structured, unstructured data |
+| Data Processing | ETL data pre-proccesing | ELT data pre-proccesing                        |
+| Schema          | predefined schema       | ad-hoc schema                                  |
+| Data Quality    | high data quality       | low data quality                               |
+| Scalability     | vertical scalable       | horizontal scalable                            |
+
 -------------------------
 
 ## Components of a Data Warehouse
@@ -137,3 +149,42 @@ There are three main types of data warehouse architectures:
 - They are optimized for specific queries, analysis, and reporting for a particular business function.
 
 ![](https://raw.githubusercontent.com/rohish-zade/data-warehousing/main/Introduction/images/warehouse-and-mart-v1.webp)
+
+### Types of Data Marts
+
+#### Dependent Data Mart:
+- A dependent data mart draws data from a centralized data warehouse. It relies on the organization’s primary data warehouse as the source of cleaned, processed data.
+- Example: A company-wide data warehouse containing data from all departments could feed a dependent data mart that is specific to the finance team.
+
+#### Independent Data Mart:
+- An independent data mart is a stand-alone system that collects data directly from sources without the use of a centralized data warehouse. It functions as a mini data warehouse for a particular business unit or department.
+- Example: A marketing department could have its own data mart that gathers data from campaign management tools and customer feedback systems without using a larger, central data warehouse.
+
+#### Hybrid Data Mart:
+- A hybrid data mart combines data from both a centralized data warehouse and external sources. 
+- It integrates data from the warehouse as well as from real-time external systems to create a more flexible and responsive environment for specific needs.
+- Example: A sales data mart may pull daily sales performance from the main warehouse, while integrating live market data from external systems.
+
+### Why Use a Data Mart?
+- **Departmental Focus:** Data marts allow specific departments to focus on data that is relevant to them.
+- **Faster Query Performance:** Since a data mart contains only a small, subject-specific subset of data, queries run faster compared to querying a full-scale data warehouse.
+- **Cost-Effective:** Building a full data warehouse can be time-consuming and expensive. Data marts provide a faster and cheaper solution for departments that need immediate access to analytics.
+- **Flexibility:** Data marts can be tailored to meet the specific needs of a department without interfering with other parts of the organization.
+- **Simplified Access:** Non-technical users can access the data they need through pre-built dashboards or reports, reducing the complexity associated with retrieving data from a large warehouse.
+
+
+### Disadvantages of Data Marts
+- **Data Silos:** If multiple independent data marts are created for different departments, this can lead to data silos, where different departments have different views of the same data, causing inconsistencies.
+- **Limited Scope:** Data marts focus on specific business areas, so they may not provide a holistic view of the organization’s data like a data warehouse.
+- **Duplication of Data:** Multiple data marts can lead to redundancy, as the same data may be duplicated in different marts, increasing storage costs.
+- **Maintenance Complexity:** If data marts grow in size or complexity, maintaining them can become challenging. It may lead to higher costs and overhead in managing multiple marts.
+
+### Data Mart vs. Data Warehouse
+| Feature            | Data Mart                          | Data Warehouse                     |
+|--------------------|------------------------------------|------------------------------------|
+| **Scope**          | Department-specific (narrow focus) | Enterprise-wide (broad focus)      |
+| **Size**           | Small subset of data               | Large volume of data               |
+| **Data Sources**   | Limited to specific business areas | Integrates data from all business units |
+| **Implementation** | Faster and simpler                 | More time-consuming and complex    |
+| **Maintenance**    | Easier to maintain                 | Requires more resources            |
+| **Query Performance** | Faster due to smaller size     | May be slower for complex queries  |
