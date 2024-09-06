@@ -37,7 +37,7 @@ By using a data warehouse, organizations can transform raw data into valuable in
 
 
 ## Data Warehouse vs Data Lake
-- A data lake is a centralized repository that allows organizations to store all their structured and unstructured data at any scale.
+A data lake is a centralized repository that allows organizations to store all their structured and unstructured data at any scale.
 
 | Metric          | Data Warehouse          | Data Lakes                                     |
 | --------------- | ----------------------- | ---------------------------------------------- |
@@ -188,3 +188,37 @@ There are three main types of data warehouse architectures:
 | **Implementation** | Faster and simpler                 | More time-consuming and complex    |
 | **Maintenance**    | Easier to maintain                 | Requires more resources            |
 | **Query Performance** | Faster due to smaller size     | May be slower for complex queries  |
+
+
+------------------------------
+
+## Multi-Temperature Data Management Model
+
+The Multi-Temperature Data Management model refers to a strategy used in data warehousing and data management to handle different types of data based on its usage frequency and importance.
+
+The model categorizes data into various "temperature zones" like hot, warm, and cold based on how often it is accessed and how critical it is for operational and analytical purposes.
+
+### Types of Data in the Multi-Temperature Model
+
+#### Hot Data
+-  Frequently accessed, mission-critical data that requires high-performance storage and fast access times.
+- Examples: Current transactional data, customer interactions, real-time analytics.
+
+#### Warm Data 
+- Moderately accessed data that may not require real-time access but still needs to be readily available for analysis or operational purposes.
+- Examples: Monthly sales reports, aggregated data from the last few quarters.
+
+#### Cold Data 
+- Infrequently accessed or dormant data that is kept for compliance, regulatory, or long-term archival purposes.
+- Examples: Archived transaction records, older financial data, logs.
+
+### Benefits of the Multi-Temperature Model
+- **Cost Optimization:** By storing data based on its temperature, organizations can save on storage costs. Hot
+- **Improved Performance:** Frequently accessed hot data is stored in fast, low-latency storage, ensuring quick query responses and real-time processing.
+- **Efficient Resource Utilization:** It ensures that high-performance resources are allocated to critical data, while less frequently used data is stored on lower-cost storage.
+- **Scalability:** As data grows over time, a multi-temperature approach allows the data warehouse to scale efficiently by offloading older or less critical data to cheaper storage solutions without compromising performance.
+
+### Implementation Process 
+- Frequency of access 
+- Data change rate 
+- Identify which storage type is suitable for the project
