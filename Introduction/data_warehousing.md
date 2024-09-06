@@ -31,7 +31,7 @@ By using a data warehouse, organizations can transform raw data into valuable in
 #### 5. **Scalability:** 
   - A data warehouse can handle large volumes of data and adapt as the organization grows.
 
-
+-------------------------
 ### Components of a Data Warehouse
 
 ![](https://github.com/rohish-zade/data-warehousing/blob/main/Introduction/images/components%20of%20data%20Datawarehouse.png)
