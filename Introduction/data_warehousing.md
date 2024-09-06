@@ -68,3 +68,15 @@ By using a data warehouse, organizations can transform raw data into valuable in
 | Examples        | Informatica, IBM DataStage, Talend.                                                              | Apache Spark, Google BigQuery, Amazon Redshift.                                                                                  |
 | Ideal for       | Well defined data models as data quality is critical.                                            | Agile environment's, on-the-go schema.                                                                                           |
 | Business Value  | Reporting and Analytics.                                                                         | ML and Data Science.             
+
+
+### Database vs Data Warehouse
+
+| Metric            | Database                    | Data Warehouse                     |
+| ----------------- | --------------------------- | ---------------------------------- |
+| Design Purpose    | to record data              | to analyze data                    |
+| Transaction Type  | OLTP                        | OLAP                               |
+| Orientation       | application-oriented        | subject-oriented                   |
+| Data Freshness    | data available in real-time | data must be refreshed when needed |
+| Modeling Approach | relational data modeling    | dimensional data modeling          |
+| Data Volume       | GB/TB (<1000M)              | TB/PB (1000M>)                     |
