@@ -26,7 +26,7 @@ In the same way an architect designs a blueprint before constructing a house, bu
 
 ![](https://github.com/rohish-zade/data-warehousing/blob/master/Data%20Modeling/images/conceptual-model-order-system.png)
 
-**Example:** In a retail business, a conceptual model may define entities like Customer, Product, Order, and Store without specifying the actual columns.
+- **Example:** In a retail business, a conceptual model may define entities like Customer, Product, Order, and Store without specifying the actual columns.
 
 
 ### Logical Data Model:
@@ -37,8 +37,7 @@ In the same way an architect designs a blueprint before constructing a house, bu
 
 ![](https://github.com/rohish-zade/data-warehousing/blob/master/Data%20Modeling/images/logical-data-model.png)
 
-**Example:** 
-The Customer entity may have attributes like Customer ID, Customer Name, Email, and Phone Number. Relationships between entities, such as "each Order belongs to one Customer" and "each Order contains multiple Products," are also defined.
+- **Example:** The Customer entity may have attributes like Customer ID, Customer Name, Email, and Phone Number. Relationships between entities, such as "each Order belongs to one Customer" and "each Order contains multiple Products," are also defined.
 
 
 ### Physical Data Model:
@@ -47,4 +46,4 @@ The Customer entity may have attributes like Customer ID, Customer Name, Email, 
 
 ![](https://github.com/rohish-zade/data-warehousing/blob/master/Data%20Modeling/images/physical-data-model.png)
 
-**Example:** The Customer table will have columns with specific data types such as Customer ID (integer), Customer Name (varchar), and Email (varchar). It might also define indexes on Customer ID for faster lookup.
+- **Example:** The Customer table will have columns with specific data types such as Customer ID (integer), Customer Name (varchar), and Email (varchar). It might also define indexes on Customer ID for faster lookup.
