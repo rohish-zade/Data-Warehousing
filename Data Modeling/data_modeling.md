@@ -24,7 +24,7 @@ In the same way an architect designs a blueprint before constructing a house, bu
 - It defines what data will be stored in the warehouse but doesn’t include details like specific fields or data types.
 - Focus on entities and their relationships without getting into technical details.
 
-- [](https://github.com/rohish-zade/data-warehousing/blob/master/Data%20Modeling/images/conceptual-model-order-system.png)
+![](https://github.com/rohish-zade/data-warehousing/blob/master/Data%20Modeling/images/conceptual-model-order-system.png)
 
 - **Example:** In a retail business, a conceptual model may define entities like Customer, Product, Order, and Store without specifying the actual columns.
 
@@ -35,7 +35,7 @@ In the same way an architect designs a blueprint before constructing a house, bu
 - The logical model doesn’t concern itself with the physical storage details, but it does define how data is logically organized.
 - Involves normalization for data integrity.
 
-- ![](https://github.com/rohish-zade/data-warehousing/blob/master/Data%20Modeling/images/logical-data-model.png)
+![](https://github.com/rohish-zade/data-warehousing/blob/master/Data%20Modeling/images/logical-data-model.png)
 
 - **Example:** The Customer entity may have attributes like Customer ID, Customer Name, Email, and Phone Number. Relationships between entities, such as "each Order belongs to one Customer" and "each Order contains multiple Products," are also defined.
 
@@ -44,6 +44,6 @@ In the same way an architect designs a blueprint before constructing a house, bu
 - Describes how the data will be physically stored in the database. 
 - It specifies data types, indexes, partitions, and other details for optimizing storage and retrieval performance.
 
-- ![](https://github.com/rohish-zade/data-warehousing/blob/master/Data%20Modeling/images/physical-data-model.png)
+![](https://github.com/rohish-zade/data-warehousing/blob/master/Data%20Modeling/images/physical-data-model.png)
 
 - **Example:** The Customer table will have columns with specific data types such as Customer ID (integer), Customer Name (varchar), and Email (varchar). It might also define indexes on Customer ID for faster lookup.
