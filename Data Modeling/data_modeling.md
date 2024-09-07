@@ -22,7 +22,7 @@ In the same way an architect designs a blueprint before constructing a house, bu
 ### Conceptual Data Model:
 - Provides a high-level view of the overall data structure.
 - It defines what data will be stored in the warehouse but doesn’t include details like specific fields or data types.
-- Focus on entities and their relationships without getting into technical details.\
+- Focus on entities and their relationships without getting into technical details.
 
 ![](https://github.com/rohish-zade/data-warehousing/blob/master/Data%20Modeling/images/conceptual-model-order-system.png)
 
