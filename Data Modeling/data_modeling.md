@@ -47,3 +47,49 @@ In the same way an architect designs a blueprint before constructing a house, bu
 ![](https://github.com/rohish-zade/data-warehousing/blob/master/Data%20Modeling/images/physical-data-model.png)
 
 - **Example:** The Customer table will have columns with specific data types such as Customer ID (integer), Customer Name (varchar), and Email (varchar). It might also define indexes on Customer ID for faster lookup.
+
+------------------
+
+## Key Components of Data Modeling
+
+1. **Entities:**
+- Entities represent objects or concepts that store data. In data warehousing, these are typically tables.
+- Example: Common entities in a retail data warehouse include Customer, Product, Order, and Store.
+
+2. **Attributes:**
+- Attributes represent the data fields or properties within an entity.
+- Example: For the Customer entity, attributes might include Customer ID, Name, Email, and Address.
+
+3. **Relationships:**
+- Relationships define how entities are related to each other. In data warehousing, this typically manifests as foreign key relationships.
+- Example: A Customer can place multiple Orders (1-to-many relationship), and each Order can contain multiple Products (many-to-many relationship, often handled via a junction table).
+
+4. **Keys:**
+- Keys are used to uniquely identify records and establish relationships between tables.
+  - **Primary Key (PK):** Uniquely identifies each record in a table.
+  - **Foreign Key (FK):** Links one table to another by referencing the primary key of the related table.
+- Example: The Customer ID in the Customer table is a primary key. In the Order table, the Customer ID is a foreign key linking orders to customers.
+
+-------------------
+
+## Steps in Data Modeling for Data Warehousing
+
+### Requirement Gathering:
+- Understand the business needs, the questions to be answered, and the data sources available. - This step involves consulting with business stakeholders to define the scope of the data warehouse.
+
+### Identify Entities and Relationships:
+- Define the key entities (like customer, product, sales) and how they relate to each other. - This involves identifying fact tables (quantitative data) and dimension tables (descriptive data).
+
+### Design the Logical Data Model:
+- Create a detailed logical data model, including the entities, their attributes, relationships, and keys. Ensure that the design supports the required queries and reporting.
+
+### Define the Physical Data Model:
+- Translate the logical model into a physical model. 
+- This involves selecting appropriate data types, indexing strategies, partitioning large tables, and optimizing for performance.
+
+### Build ETL Processes:
+- Design the Extract, Transform, Load (ETL) processes to populate the data warehouse.
+- The ETL processes need to move data from source systems to the warehouse while maintaining consistency and accuracy.
+
+### Optimize and Test:
+- Test the data model with actual queries to ensure it performs as expected. Optimization might include indexing frequently queried columns or partitioning large tables.
