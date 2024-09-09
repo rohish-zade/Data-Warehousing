@@ -74,22 +74,22 @@ In the same way an architect designs a blueprint before constructing a house, bu
 
 ## Steps in Data Modeling for Data Warehousing
 
-### Requirement Gathering:
+#### Requirement Gathering:
 - Understand the business needs, the questions to be answered, and the data sources available. - This step involves consulting with business stakeholders to define the scope of the data warehouse.
 
-### Identify Entities and Relationships:
+#### Identify Entities and Relationships:
 - Define the key entities (like customer, product, sales) and how they relate to each other. - This involves identifying fact tables (quantitative data) and dimension tables (descriptive data).
 
-### Design the Logical Data Model:
+#### Design the Logical Data Model:
 - Create a detailed logical data model, including the entities, their attributes, relationships, and keys. Ensure that the design supports the required queries and reporting.
 
-### Define the Physical Data Model:
+#### Define the Physical Data Model:
 - Translate the logical model into a physical model. 
 - This involves selecting appropriate data types, indexing strategies, partitioning large tables, and optimizing for performance.
 
-### Build ETL Processes:
+#### Build ETL Processes:
 - Design the Extract, Transform, Load (ETL) processes to populate the data warehouse.
 - The ETL processes need to move data from source systems to the warehouse while maintaining consistency and accuracy.
 
-### Optimize and Test:
+#### Optimize and Test:
 - Test the data model with actual queries to ensure it performs as expected. Optimization might include indexing frequently queried columns or partitioning large tables.
