@@ -18,10 +18,10 @@
 - Designed from the lowest possible grains
 
 - Example: Consider we have a below fact table, firt requirement is to find the sales happened on the November 20th. We can easily find out the sales for that day the as fact table contains the necessary details to get that 
-- ![](images)
+- ![](https://github.com/rohish-zade/data-warehousing/blob/master/Dimensional%20Modeling/images/fact-table-1.png)
 - Now, the requirement is to find out the which customer pruchased which products on 20th November 20th. there is no way we can find out this as fact table doesn't contain any product details.
 - Now consider the below updated fact table with more atomic grain which has product details. Not its easy to get the answer for second requirement as well.
-- ![]()
+- ![](https://github.com/rohish-zade/data-warehousing/blob/master/Dimensional%20Modeling/images/fact-table-2.png)
 
 
 
