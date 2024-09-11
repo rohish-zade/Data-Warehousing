@@ -41,11 +41,12 @@
 ### Fact Table
 - The primary table in a dimensional model.
 - Contains key measurements facts, primary key and foreign keys of dimensions.
-- Qualitative and transactional data (profit, revenue).
+- Quantitative and transactional data (profit, revenue).
 - Can be aggregated.
 
 ### Dimension Table
 - Contain descriptive data that provides context to the facts, such as product details, customer information, time periods, etc.
+- Dimension tables contain attributes that describe who, what, where, and when related to the facts.
 
 ### Measures (Facts)
 - Measures are numeric values or quantities stored in fact tables. 
@@ -64,7 +65,58 @@
 
 ---------------------
 
+### Type of facts in Fact Table(Facts Columns)
+
+### Additive
+- Additive facts are measures that can be aggregated across all columns.
+- Can add the fact along any dimension.
+- This includes sales, quantity or profit.
+- **Example:**
+  - Total Sales: The total sales revenue can be summed across all dimensions (e.g., date, product, store).
+
+### can be aggregated across all columns.
+- Semi-additive facts can be summed across some, but not all, dimensions.
+- Can add along some dimension but not all dimensions.
+- This includes balance, inventory, head count.
+- **Example:**
+  - Account Balance: You can sum account balances across customers or branches but not across  time, as balances are typically a snapshot at a specific point in time.
+  - Inventory Levels: Inventory levels can be summed by location or product but not across time  because inventory at one time cannot be added to inventory at another time.
+
+### Non-Additive Facts
+- Non-additive facts cannot be summed or aggregated across any dimension. 
+- Cannot add the fact along any dimension.
+- These facts often represent ratios, percentages, or other calculations that do not make sense to aggregate.
+- **Example:**
+  - Profit Margin: Profit margin is a percentage or ratio, and summing it across different products or time periods would not provide meaningful results.
+  - Average Price: Similarly, average price cannot be summed across products or time; it must be recalculated by weighting the prices based on the quantities sold.
+
+---------------------
+
+## Type of Facts (Fact Tables)
+
+### Transaction Fact Table
+- The Transaction Fact Table records individual, granular events or transactions as they happen.
+- Each row in this type of fact table represents a single event, such as a sale, order, or payment.
+- These tables store high-volume, low-level details.
+- One record per transaction.
+- Example:
+  - A Sales Transaction Fact Table might capture individual sales transactions at a specific time.
+  - | Date_Key  | Product_Key | Store_Key | Customer_Key | Quantity_Sold | Total_Sales |
+|-----------|-------------|-----------|--------------|---------------|-------------|
+| 20230901  | 1001        | 500       | 2001         | 2             | 1000        |
 
 
+### Periodic Snapshot Fact Table
+- The Periodic Snapshot Fact Table captures data at regular intervals (e.g., daily, weekly, monthly) to provide a snapshot of the business at a specific point in time.
+- 
+
+### Accumulating Snapshot Fact Table
+
+### Factless Fact Table
+
+
+
+
+-------------
 Fact table: measurement => salary => 200
 Dimension table: context => time, employee
