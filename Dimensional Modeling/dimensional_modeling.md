@@ -99,22 +99,82 @@
 - Each row in this type of fact table represents a single event, such as a sale, order, or payment.
 - These tables store high-volume, low-level details.
 - One record per transaction.
-- Example:
-  - A Sales Transaction Fact Table might capture individual sales transactions at a specific time.
-  - | Date_Key  | Product_Key | Store_Key | Customer_Key | Quantity_Sold | Total_Sales |
-    |-----------|-------------|-----------|--------------|---------------|-------------|
-    | 20230901  | 1001        | 500       | 2001         | 2             | 1000        |
+
+**Example:**
+- A Sales Transaction Fact Table might capture individual sales transactions at a specific time.
+- | Date_Key  | Product_Key | Store_Key | Customer_Key | Quantity_Sold | Total_Sales |
+  |-----------|-------------|-----------|--------------|---------------|-------------|
+  | 20230901  | 1001        | 500       | 2001         | 2             | 1000        |
 
 
 ### Periodic Snapshot Fact Table
 - The Periodic Snapshot Fact Table captures data at regular intervals (e.g., daily, weekly, monthly) to provide a snapshot of the business at a specific point in time.
-- 
+- Each row summarizes data for a fixed period, rather than a specific event.
+
+**Characteristics:**
+- Used to track regular, recurring metrics over time.
+- Each row represents a summary of data for a specific period.
+- Allows for time-series analysis, making it ideal for tracking changes over time.
+
+**Example:**
+- A Monthly Sales Snapshot Fact Table might summarize total sales for each product at the end of every month.
+- | Date_Key  | Product_Key | Store_Key | Total_Sales | Total_Quantity_Sold |
+  |-----------|-------------|-----------|-------------|---------------------|
+  | 20230930  | 1001        | 500       | 50,000      | 150                 |
+
 
 ### Accumulating Snapshot Fact Table
+- The Accumulating Snapshot Fact Table is used to track the lifecycle of events or processes that have a clear beginning and end, such as orders, claims, or projects. 
+- The fact table gets updated as the process progresses through different stages.
+
+**Characteristics:**
+- Tracks events with defined stages or milestones.
+- Each row represents a process, and columns are updated as the process moves through stages.
+- Used for tracking processes like order fulfillment, claim processing, or project management.
+
+**Example:**
+- An Order Fulfillment Fact Table might capture the stages an order goes through (e.g., placed, shipped, delivered).
+
+- | Order_Key | Order_Date | Ship_Date  | Delivery_Date | Payment_Amount | Order_Status |
+  |-----------|------------|------------|---------------|----------------|--------------|
+  | 1001      | 20230901   | 20230903   | 20230905      | 1500           | Delivered    |
+
 
 ### Factless Fact Table
+- The Factless Fact Table does not contain any numeric or measurable facts but records the occurrence of events or activities. 
+- It tracks relationships between dimensions and records whether an event happened, without any associated measure.
+
+**Characteristics:**
+- Used to track events or conditions.
+- Contains only foreign keys that link to dimension tables.
+- No measurable facts; just records the occurrence of an event.
+
+**Examples of Factless Fact Tables**
+- 1. Attendance Tracking
+  - Scenario: A school wants to track student attendance in classes.
+
+  - Factless Fact Table: Student_Attendance
+  - | Date_Key  | Student_Key | Class_Key |
+    |-----------|-------------|-----------|
+    | 20230901  | 2001        | 101       |
+    | 20230901  | 2002        | 101       |
+    | 20230902  | 2003        | 102       |
+
+  - Date_Key: Links to the date dimension table.
+  - Student_Key: Links to the student dimension table.
+  - Class_Key: Links to the class dimension table.
+
+- This factless fact table records which students attended which classes on specific dates.
 
 
+### Summary of Types of Fact Tables
+
+| Type                           | Description                                             | Use Case                           |
+|--------------------------------|---------------------------------------------------------|------------------------------------|
+| Transaction Fact Table         | Records individual transactions or events.             | Sales, orders, payments.           |
+| Periodic Snapshot Fact Table   | Captures summary data at regular intervals.            | Monthly/weekly sales, inventory tracking. |
+| Accumulating Snapshot Fact Table | Tracks the lifecycle of events or processes.          | Order fulfillment, claims processing. |
+| Factless Fact Table            | Records the occurrence of events without numeric measures. | Attendance, registration, event tracking. |
 
 
 -------------
