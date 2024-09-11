@@ -176,7 +176,66 @@
 | Accumulating Snapshot Fact Table | Tracks the lifecycle of events or processes.          | Order fulfillment, claims processing. |
 | Factless Fact Table            | Records the occurrence of events without numeric measures. | Attendance, registration, event tracking. |
 
+-------------------------
+
+## Types of Dimensions
+
+### Conformed Dimensions
+- Conformed Dimensions are dimensions that are shared across multiple fact tables or data marts within a data warehouse. 
+- They ensure consistency in reporting and analysis by providing a unified view of the dimension attributes across different fact tables.
+- Constant and shared across multiple fact tables and has the same meaning.
+- Example: Date as a key, product id as a key.
+
+### Role-Playing Dimensions
+- Role-Playing Dimensions are dimensions that are used in multiple contexts or roles within the same data warehouse. 
+- They share the same attributes but are used in different ways depending on the context.
+- Instead of creating separate dimensions for each role, this approach minimizes duplication and simplifies the model.
+- Example: Date Dimension: Can play different roles such as Order Date, Ship Date, and Invoice Date.
+
+
+### Junk Dimensions
+- Junk Dimensions combine several low-cardinality attributes (attributes with a limited number of distinct values) into a single dimension.
+- This helps to simplify the schema by avoiding the creation of numerous small dimensions.
+- Attributes like gender (M/F), status flag (active/inactive), or order status (pending/shipped/delivered).
+
+**Example of a Junk Dimension:**
+Consider a sales data warehouse where you have various small attributes like `Promo_Flag`, `Urgency_Flag`, and `Seasonality_Flag`. Instead of creating separate dimensions for each flag, you consolidate them into a single junk dimension:
+
+**Junk Dimension Table: `Dim_Junk`**
+
+| Junk_Dim_Key | Promo_Flag | Urgency_Flag | Seasonality_Flag |
+|--------------|------------|--------------|------------------|
+| 1            | Yes        | High         | Summer           |
+| 2            | No         | Low          | Winter           |
+| 3            | Yes        | Medium       | Fall             |
+
+**Fact Table Example: `Fact_Sales`**
+
+| Order_ID | Date_Key | Product_Key | Customer_Key | Junk_Dim_Key |
+|----------|----------|-------------|--------------|--------------|
+| 1001     | 20230901 | 2001        | 3001         | 1            |
+| 1002     | 20230901 | 2002        | 3002         | 2            |
+| 1003     | 20230902 | 2003        | 3003         | 3            |
+
+In this example, the `Junk_Dim_Key` in the `Fact_Sales` table references the `Dim_Junk` table, where various flags and attributes are stored.
+
+### Degenerate Dimensions
+- Degenerate Dimensions are dimensions that do not have their own dimension table but are instead stored as attributes in the fact table. 
+- hey are typically used when the dimension attributes are not significant enough to warrant a separate dimension table.
+
+**Examples and use cases:**
+- Invoice Numbers: 
+ - In a sales fact table, the invoice number can serve as a degenerate dimension. It uniquely identifies a transaction but does not require additional attributes beyond the fact table.
+
+- Transaction IDs:
+ - For financial transactions, transaction IDs can be degenerate dimensions, helping to trace and analyze individual transactions.
+
+
+### Slowly Changing Dimensions
+[Please refer this](https://github.com/rohish-zade/Python/blob/master/working_with_databases_and_ETL/scd_types.ipynb)
+
 
 -------------
+
 Fact table: measurement => salary => 200
 Dimension table: context => time, employee
