@@ -102,8 +102,8 @@
 - Example:
   - A Sales Transaction Fact Table might capture individual sales transactions at a specific time.
   - | Date_Key  | Product_Key | Store_Key | Customer_Key | Quantity_Sold | Total_Sales |
-  - |-----------|-------------|-----------|--------------|---------------|-------------|
-  - | 20230901  | 1001        | 500       | 2001         | 2             | 1000        |
+    |-----------|-------------|-----------|--------------|---------------|-------------|
+    | 20230901  | 1001        | 500       | 2001         | 2             | 1000        |
 
 
 ### Periodic Snapshot Fact Table
