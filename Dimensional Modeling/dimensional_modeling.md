@@ -276,7 +276,7 @@ In this schema, dimension tables are split into additional tables to reduce data
 The Galaxy Schema is a combination of multiple star schemas. It’s used when multiple fact tables share common dimension tables. 
 It’s called a "constellation" because it contains multiple stars (fact tables) and dimensions.
 
-[](https://github.com/rohish-zade/data-warehousing/blob/master/Dimensional%20Modeling/images/galaxy-schema.png)
+![](https://github.com/rohish-zade/data-warehousing/blob/master/Dimensional%20Modeling/images/galaxy-schema.png)
 
 **Characteristics:**
 - Multiple dimension map to multiple fact tables
