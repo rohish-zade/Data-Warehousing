@@ -234,8 +234,35 @@ In this example, the `Junk_Dim_Key` in the `Fact_Sales` table references the `Di
 ### Slowly Changing Dimensions
 [Please refer this](https://github.com/rohish-zade/Python/blob/master/working_with_databases_and_ETL/scd_types.ipynb)
 
+-----------------
 
--------------
+## Dimensional Modeling Schemas
+
+- In data warehousing, dimensional modeling is a technique used to design the structure of a data warehouse. 
+- The goal is to optimize the data model for querying and reporting by making it simple and intuitive. 
+- The key concept in dimensional modeling is to use fact and dimension tables, structured in a way that supports business analysis from multiple perspectives.
+
+There are three common types of dimensional modeling schemas:
+
+### 1. Star Schema
+The Star Schema is the simplest and most popular dimensional model, where the fact table is at the center, and dimension tables surround it like points of a star.
+
+![](https://raw.githubusercontent.com/rohish-zade/data-warehousing/master/Dimensional%20Modeling/images/star_schema.webp)
+
+**Characteristics:**
+- Multiple dimensions map to a single fact table.
+- Dimension tables are denormalized, meaning they have redundant data, which makes querying simpler and faster.
+- High performance due to less number of joins.
+- Optimized for read operations (queries and reporting).
+- High disk storage.
+
+
+
+
+
+
+
+-----------------------
 
 Fact table: measurement => salary => 200
 Dimension table: context => time, employee
