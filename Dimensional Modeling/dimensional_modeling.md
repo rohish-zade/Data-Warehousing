@@ -310,4 +310,5 @@ It’s called a "constellation" because it contains multiple stars (fact tables)
 -----------------------
 
 Fact table: measurement => salary => 200
+
 Dimension table: context => time, employee
