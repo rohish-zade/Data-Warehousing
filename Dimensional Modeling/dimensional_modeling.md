@@ -247,7 +247,7 @@ There are three common types of dimensional modeling schemas:
 ### 1. Star Schema
 The Star Schema is the simplest and most popular dimensional model, where the fact table is at the center, and dimension tables surround it like points of a star.
 
-![](https://raw.githubusercontent.com/rohish-zade/data-warehousing/master/Dimensional%20Modeling/images/star_schema.webp)
+![](https://github.com/rohish-zade/data-warehousing/blob/master/Dimensional%20Modeling/images/star%20schema.png)
 
 **Characteristics:**
 - Multiple dimensions map to a single fact table.
@@ -257,8 +257,53 @@ The Star Schema is the simplest and most popular dimensional model, where the fa
 - High disk storage.
 
 
+### 2. Snowflake Schema
+The Snowflake Schema is a more complex version of the star schema, where dimension tables are normalized into multiple related tables. 
+In this schema, dimension tables are split into additional tables to reduce data redundancy, resembling a snowflake structure.
+
+![](https://github.com/rohish-zade/data-warehousing/blob/master/Dimensional%20Modeling/images/snowflake-schema.png)
+
+**Characteristics:**
+- Fact tables remain at the center.
+- Multiple dimensions map to a multiple dimension tables.
+- Dimension tables are normalized, which reduces data redundancy.
+- Low performance due to more number of joins.
+- Low data redundancy.
+- Low disk storage.
 
 
+### Galaxy Schema (Fact Constellation Schema)
+The Galaxy Schema is a combination of multiple star schemas. It’s used when multiple fact tables share common dimension tables. 
+It’s called a "constellation" because it contains multiple stars (fact tables) and dimensions.
+
+[](https://github.com/rohish-zade/data-warehousing/blob/master/Dimensional%20Modeling/images/galaxy-schema.png)
+
+**Characteristics:**
+- Multiple dimension map to multiple fact tables
+- Multiple fact tables, representing different business processes.
+- Shared dimensions across multiple fact tables.
+- Handles multiple business processes with shared dimensions.
+- Provides a comprehensive view of the business.
+- Suitable for complex business models with interrelated business processes.
+- Low data redundancy.
+- Low disk storage.
+
+
+### Comparison of Schemas
+
+| **Feature**        | **Star Schema**                         | **Snowflake Schema**                    | **Galaxy Schema**                      |
+|--------------------|-----------------------------------------|-----------------------------------------|----------------------------------------|
+| **Structure**       | Denormalized dimensions                 | Normalized dimensions                   | Multiple fact tables and dimensions    |
+| **Query Complexity**| Simple (fewer joins)                    | Complex (more joins)                    | Complex (multiple fact tables)         |
+| **Redundancy**      | High (due to denormalization)           | Low (due to normalization)              | Varies based on design                 |
+| **Performance**     | High (faster queries)                   | Moderate (slower queries)               | Depends on query and schema size       |
+| **Use Case**        | Simple, single business process         | More complex, reduces redundancy        | Complex business processes             |
+
+
+### Conclusion
+- **Star Schema** is ideal for simpler, query-intensive environments where performance is key.
+- **Snowflake Schema** is useful for scenarios where storage efficiency is more important than query performance.
+- **Galaxy Schema** is suitable for complex business models with multiple interrelated business processes.
 
 
 
