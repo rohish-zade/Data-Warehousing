@@ -25,7 +25,9 @@ The concept of normalization is based on normal forms (NF), which are levels of 
 **Example:** 
 
 - Relation `EMPLOYEE` is not in 1NF because of multi-valued attribute `EMP_PHONE`.
+
   ![](https://github.com/rohish-zade/data-warehousing/blob/master/Introduction/images/1NF_1.png)
 
 - The decomposition of the EMPLOYEE table into 1NF has been shown below:
+
   ![](https://github.com/rohish-zade/data-warehousing/blob/master/Introduction/images/1NF_2.png)
