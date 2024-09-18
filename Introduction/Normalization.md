@@ -31,3 +31,20 @@ The concept of normalization is based on normal forms (NF), which are levels of 
 - The decomposition of the EMPLOYEE table into 1NF has been shown below:
 
   ![](https://github.com/rohish-zade/data-warehousing/blob/master/Introduction/images/1NF_2.png)
+
+
+### 4. Second Normal Form (2NF)
+- Must be in 1NF
+- All non key attributes must be fully dependent on candidate key.
+  i.e If a non key column is partially dependent on candidate key(subset of columns forming the candidate key) then split them into separate tables.
+- Every table should have primary key and relationship between the tables should be formed using a foreign key.
+
+**Candidate key:** Set of columns which uniquely identify a record. A table can have multiple candidate keys.
+**Non-key columns:** Columns which are not part of the canditate key or primary key.
+**Partial Dependency:** 
+ - If your candidate key is a combination of 2 columns(or multiple columns) then every non key columns(columns which are not part of candidate key) should be fully dependent on all the columns
+ - If there is any non key column which depends only on one of the candidate key columns then this results in partial dependency.
+
+
+ 
+
