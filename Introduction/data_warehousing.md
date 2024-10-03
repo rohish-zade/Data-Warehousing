@@ -60,7 +60,7 @@ A data lake is a centralized repository that allows organizations to store all t
 - **Extract:** Retrieve data from source systems.
 - **Transform:** Cleanse, reformat, and prepare the data for storage.
 - **Load:** Insert the transformed data into the data warehouse.
-
+ 
 #### Data Staging Area: 
 - A temporary storage area where data is cleaned and transformed before loading into the warehouse.
 
